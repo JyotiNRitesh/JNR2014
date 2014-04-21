@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+    <collection base-url="http://www.indianrail.gov.in/cgi_bin/inet_stncode_cgi.cgi" method="POST">
+        <request-params>
+            <param key="lccp_stnname">
+                <value>a</value>
+                 <value>b</value>
+                 <value>c</value>
+                 <value>d</value>
+                 <value>e</value>
+            </param>
+            <param key="lccp_SearchType">
+                <value>START_STR</value>
+            </param>
+            <param key="lccp_choice">
+                <value>STN_NAME</value>
+            </param>
+         </request-params>
+         <data>
+             <pattern>
+             	<![CDATA[<TR>[^<]*<TD>([^<]*)</TD>[^<]*<TD>([^<]*)</TD>[^<]*</TR>]]>
+             </pattern>
+             <group index="2" id="st_code" label="Station Code" />
+             <group id="st_name" index="1" label="Station Name" />
+         </data>
+    </collection>
+</root>

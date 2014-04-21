@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+    <collection base-url="http://en.wikipedia.org/wiki/Indian_Railways#Railway_zones" method="POST">
+        <data>
+             <pattern>
+             	<![CDATA[<td><a[^<]*>([^<]*)</a></td>[^<]*<td>([^<]*)</td>]]>
+             </pattern>
+             <group id="zone_name" index="1" label="Zone Name" />
+             <group index="2" id="zone_code" label="Zone Code" />
+         </data>
+    </collection>
+</root>
